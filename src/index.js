@@ -3,10 +3,6 @@ import ReactDOM from 'react-dom';
 import './index.css';
 
 class TodoItems extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   render() {
     let todoEntries = this.props.entries;
     let deleteItem = this.props.deleteItem;
@@ -14,8 +10,8 @@ class TodoItems extends React.Component {
     function createTasks(item) {
       return (
         <li key={item.key}>
-          {item.text}
-          <button type="button" className="x-button" onClick={deleteItem}>X</button>
+          <div>{item.text}</div>
+          <button type="button" className="x-button" onClick={() => deleteItem(item)}>-</button>
         </li>
       ) 
     }
@@ -64,8 +60,9 @@ class TodoList extends React.Component {
   deleteItem(item) {
     let itemArray = this.state.items;
     let index = itemArray.indexOf(item);
+
     itemArray.splice(index,1);
-    
+
     this.setState({
       items: itemArray
     });
@@ -79,7 +76,7 @@ class TodoList extends React.Component {
             <input ref={(a) => this._inputElement = a}
               placeholder="enter task">
             </input>
-            <button type="submit">add</button>
+            <button type="submit">+</button>
           </form>
         </div>
         <TodoItems entries={this.state.items} deleteItem={this.deleteItem}/>

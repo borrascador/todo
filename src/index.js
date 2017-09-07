@@ -39,21 +39,22 @@ class TodoList extends React.Component {
   }
 
   addItem(e) {
-    let itemArray = this.state.items;
+    if (this._inputElement.value !== "") {
+      let itemArray = this.state.items;
 
-    itemArray.unshift(
-      {
-        text: this._inputElement.value,
-        key: Date.now()
-      }
-    );
+      itemArray.push(
+        {
+          text: this._inputElement.value,
+          key: Date.now()
+        }
+      );
 
-    this.setState({
-      items: itemArray
-    });
+      this.setState({
+        items: itemArray
+      });
+    }
 
     this._inputElement.value = "";
-
     e.preventDefault();
   }
 

@@ -5,7 +5,7 @@ body {
 
 .todoListMain {
   margin: 0 auto;
-  margin-top: 20px;
+  margin-bottom: 20px;
   width: 300px;
 }
 
@@ -20,15 +20,21 @@ body {
   padding: 10px;
   font-size: 16px;
   color: #FFF;
+  width: 42px;
+}
+
+.todoListMain button:hover {
+  cursor: pointer;
+}
+
+.todoListMain .header button {
   background-color: #0066FF;
   border: 2px solid #0066FF;
-  width: 42px;
 }
 
 .todoListMain .header button:hover {
   background-color: #003399;
   border: 2px solid #003399;
-  cursor: pointer;
 }
 
 .todoListMain .theList {
@@ -52,14 +58,13 @@ body {
 }
 
 .todoListMain .theList button {
-  margin-right: 0px;
   background-color: #FF0000;
   border: 2px solid #FF0000;
   vertical-align: top;
+  margin-right: 0px;
 }
 
 .todoListMain .theList button:hover {
   background-color: #990000;
   border: 2px solid #990000;
-  cursor: pointer;
 }

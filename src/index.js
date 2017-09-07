@@ -41,7 +41,7 @@ class TodoList extends React.Component {
   addItem(e) {
     let itemArray = this.state.items;
 
-    itemArray.push(
+    itemArray.unshift(
       {
         text: this._inputElement.value,
         key: Date.now()

@@ -59,14 +59,9 @@ class TodoList extends React.Component {
 
   deleteItem(item) {
     let itemArray = this.state.items;
-    console.log(item);
-    console.log(itemArray);
-
     let index = itemArray.indexOf(item);
-    console.log(index);
 
     itemArray.splice(index,1);
-    console.log(itemArray);
 
     this.setState({
       items: itemArray
